@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container" id="container">
+            <h3>TODO LIST</h3>
+            <input type="text" placeholder="Enter Task"  class="search" id="search">
+            <button class="btn" onclick="add()" id="btn">ADD</button>
+            <ul>
+              <li id="li"></li>
+              <i class="fa-solid fa-trash" id="icon" onclick="rem()"></i>
+            </ul>
+        </div>
+    </header>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    header
+    {
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        position: fixed;
+        
+    }
+
+    .container
+    {
+        background-color: white;
+        margin-left: 37%;
+        margin-top: 18%;
+        width: 25%;
+        height: 40vh;
+    }
+
+    h3{
+        margin-left: 12%;
+    }
+
+    .search
+    {
+        margin-top: 18%;
+        width: 60%;
+        margin-left: 5%;
+        border: 2px solid black;
+        border-radius: 10px;
+        font-size: 20px;
+    }
+
+    .btn
+    {
+        border: 2px solid orangered;
+        border-radius: 10px;
+        padding: 10px 20px;
+        color: white;
+        background-color: orangered;
+
+    }
+
+    ul{
+        list-style: none;
+    }
+
+    i{
+        margin-left: 80%;margin-top: 10%;
+    }
+</style>
+
+<script>
+    const search = document.getElementById('search');
+    const btn = document.getElementById('btn');
+    let li = document.getElementById('li');
+    let container = document.getElementById('container');
+    let icon = document.getElementById('icon');
+
+    function add()
+    {
+        if(search.value === "")
+        {
+            alert('plz type something');
+        }
+
+        else
+        {
+            let li = document.getElementById('li');
+            li.innerHTML = search.value;
+            container.appendChild(li);
+        }
+
+        search.value ='';
+    }
+
+    function rem()
+    {
+        li.remove();
+    }
+
+
+</script>
+
+</body>
+</html>
